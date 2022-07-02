@@ -1,0 +1,296 @@
+.parentContainer {
+    display: flex;
+    flex-shrink: 0;
+    width: 459px;
+    overflow: clip;
+    position: relative;
+    z-index: 100;
+
+}
+
+
+
+.container {
+    width: 459px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+    background-color: var(--background-color-light);
+    clip-path: inset(0% 0% 0% 0%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    transform: translateX(0%);
+    transition: all 0.5s ease-in-out;
+
+
+
+
+}
+
+.containerHide {
+
+    transform: translateX(-100%);
+}
+
+
+
+
+.background {
+
+    position: absolute;
+
+    top: 100px;
+
+    object-fit: cover;
+
+    opacity: 0.05;
+
+
+}
+
+.buttons {
+
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 42px;
+
+}
+
+.buttons button {
+    border: none;
+    padding: 11px 18px;
+    background: #6E707A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.buttonLocate {
+    padding: 0;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 200px;
+    margin-top: 109px;
+}
+
+.temperature {
+    display: flex;
+    align-items: center;
+    margin-top: 87px;
+
+}
+
+.temperature p:first-child {
+    font-size: 144px;
+    margin: 0;
+
+
+}
+
+.temperature p:nth-child(2) {
+    font-weight: 100;
+    font-size: 48px;
+    margin: 0;
+    color: var(--text-color-secondary);
+    margin-top: 62px;
+    font-family: Tahoma, sans-serif;
+}
+
+.clime {
+    margin: 0;
+    margin-top: 87px;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--text-color-secondary);
+}
+
+.date {
+
+    margin-top: 87px;
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.date p {
+    margin: 0;
+    font-size: 18px;
+
+    color: #88869D;
+
+}
+
+.dot {
+    margin: 0 12px !important;
+
+}
+
+.location {
+
+    margin-top: 32px;
+    display: flex;
+    color: #88869D;
+
+}
+
+.location p {
+    margin: 0;
+    margin-left: 9px;
+    margin-bottom: 52px;
+    font-size: 18px;
+
+}
+
+.searchBar {
+
+    margin-top: 45px;
+    margin-bottom: 58px;
+
+
+
+    display: flex;
+
+}
+
+.selectLocationContainer {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 45px;
+
+    width: 100%;
+}
+
+.close {
+    font-size: 18px;
+
+    margin-right: 52px;
+    margin-top: 19px;
+
+    align-self: flex-end;
+
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+
+    .parentContainer {
+
+        width: 100vw;
+        height: 100vh;
+
+
+    }
+
+    .container {
+        width: 100%;
+
+    }
+
+
+    .buttons {
+
+        width: 95%;
+        margin-top: 12px;
+
+    }
+
+
+    .image {
+        width: 180px;
+        margin-top: 48px;
+    }
+
+    .temperature {
+
+        margin-top: 38px;
+
+    }
+
+    .temperature p:nth-child(2) {
+
+        margin-top: 30px;
+
+    }
+
+    .clime {
+
+        margin-top: 32px;
+
+        font-size: 32px;
+
+    }
+
+    .date {
+
+        margin-top: 32px;
+
+    }
+
+    .date p {
+
+        font-size: 16px;
+
+    }
+
+
+    .location {
+
+        margin-top: 24px;
+
+    }
+
+    .location p {
+        margin: 0;
+        margin-left: 9px;
+        margin-bottom: 52px;
+        font-size: 18px;
+
+    }
+
+    .searchBar {
+
+        margin-top: 45px;
+        margin-bottom: 58px;
+
+
+    }
+
+    .selectLocationContainer {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0 10px;
+
+        width: 100%;
+    }
+
+    .close {
+        font-size: 18px;
+
+        margin-right: 18px;
+        margin-top: 18px;
+
+        align-self: flex-end;
+
+        cursor: pointer;
+    }
+}

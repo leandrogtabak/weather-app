@@ -1,0 +1,73 @@
+.container {
+    margin-top: -24px;
+    margin-bottom: 23px;
+}
+
+
+.progressContainer {
+    width: 229px;
+    height: 8px;
+
+    position: relative;
+
+    background-color: var(--text-color-primary);
+
+    border-radius: 80px;
+}
+
+.progressBar {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 8px;
+
+    background-color: #FFEC65;
+
+    border-radius: 80px;
+}
+
+.labelContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.label {
+    margin: 0;
+    margin-bottom: 2px;
+
+
+    font-weight: 700;
+    font-size: 12px;
+
+    color: var(--text-color-secondary);
+
+}
+
+.label:nth-child(2) {
+    margin: 0;
+    margin-bottom: 2px;
+
+    justify-self: center;
+    transform: translateX(50%);
+}
+
+.labelPContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.labelP {
+    margin: 0;
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: 12px;
+
+    color: var(--text-color-secondary);
+
+
+}

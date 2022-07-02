@@ -1,0 +1,26 @@
+.button {
+
+    width: 40px;
+    height: 40px;
+
+
+    font-weight: 700;
+    font-size: 18px;
+
+    border: none;
+
+    border-radius: 50%;
+    background-color: #585676;
+    color: var(--text-color-primary);
+    cursor: pointer;
+
+    margin-left: 12px;
+
+}
+
+.selected {
+
+    background-color: var(--text-color-primary);
+
+    color: var(--background-color-dark);
+}

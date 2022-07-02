@@ -1,0 +1,46 @@
+.container {
+
+    width: 328px;
+    min-height: 159px;
+
+    background-color: var(--background-color-light);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 48px;
+    flex-shrink: 0;
+}
+
+
+.title {
+    margin: 0;
+    margin-top: 22px;
+
+
+}
+
+.measurement {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 38px;
+}
+
+.value {
+    font-weight: 700;
+    font-size: 64px;
+
+    margin: 0;
+}
+
+.unit {
+    font-size: 36px;
+
+    margin: 0;
+    margin-top: 18px;
+
+}
+
+/* .children {} */
