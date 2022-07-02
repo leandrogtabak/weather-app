@@ -65,7 +65,7 @@ const DayList = () => {
 
       setDaysForecast(days);
     }
-  }, [fiveDaysForecast, tempUnit]);
+  }, [fiveDaysForecast, tempUnit, getTemp, setDaysForecast]);
 
   return daysForecast.length > 0 ? (
     <div className={styles.container}>

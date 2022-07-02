@@ -54,7 +54,7 @@ const HighlightsList = () => {
 
   return currentWeather !== null ? (
     <>
-      <h1 className={styles.title}>Today's Highlights</h1>
+      <h1 className={styles.title}>Today&apos;s Highlights</h1>
       <div className={styles.container}>
         <HighlightsCard title='Wind status' value={windSpeed} unit='mph'>
           <WindArrow grados={windDeg} direction={direction} />

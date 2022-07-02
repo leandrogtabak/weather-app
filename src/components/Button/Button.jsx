@@ -11,7 +11,7 @@ const Button = ({ label, onClick, tempUnit }) => {
     } else {
       setBackgroundColor('');
     }
-  }, [tempUnit]);
+  }, [tempUnit, label]);
 
   const handleClick = (e) => {
     onClick(e);
