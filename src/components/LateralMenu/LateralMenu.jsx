@@ -9,16 +9,10 @@ import SelectBox from '../SelectBox/SelectBox';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 import { Close } from '@material-ui/icons';
-import {
-  callFetchCity,
-  locateCurrentPosition,
-  callFetchCurrentWeatherByLatLon,
-  callFetchWeatherByLatLon,
-  celciusToFarerenheit,
-} from '../../services/apiCalls.js';
+import { locateCurrentPosition, callFetchCurrentWeatherByLatLon, callFetchWeatherByLatLon, celciusToFarerenheit } from '../../services/apiCalls.js';
 import { weatherProvider } from '../../Helper/Context.js';
 
-const LateralMenu = () => {
+const LateralMenu = ({ locations }) => {
   const [toggleMenus, setToggleMenus] = useState(false);
   const [locationToSearch, setLocationToSearch] = useState('');
   const [locationsFound, setLocationsFound] = useState([]);
@@ -61,6 +55,32 @@ const LateralMenu = () => {
       setShowLoader(false);
     }
   };
+
+  //////////////////////////////////////
+
+  async function callFetchCity(key) {
+    //genero una lista de cada key que ingresa el usuario en la caja de busqueda
+    const listKeys = key
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .trim()
+      .split(/\s+/);
+
+    return locations.filter((item) => {
+      let test = true;
+      for (const key of listKeys) {
+        test = item.name
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/\p{Diacritic}/gu, '')
+          .includes(key);
+        if (!test) break;
+      }
+      return test;
+    });
+  }
+  ///////////////////////
 
   const onLocateClick = async () => {
     const position = await locateCurrentPosition();

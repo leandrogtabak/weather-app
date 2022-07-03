@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { weatherProvider } from '../Helper/Context.js';
 import { celciusToFarerenheit, farenheitToCelcius } from '../services/apiCalls.js';
 
-export default function Home() {
+export default function Home({ locations }) {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [fiveDaysForecast, setFiveDaysForecast] = useState(null);
   const [daysForecast, setDaysForecast] = useState([]);
@@ -54,7 +54,7 @@ export default function Home() {
       value={{ daysForecast, setDaysForecast, currentWeather, setCurrentWeather, fiveDaysForecast, setFiveDaysForecast, tempUnit, setTempUnit }}
     >
       <Layout>
-        <LateralMenu />
+        <LateralMenu locations={locations} />
         <div className={styles.container}>
           <div className={styles.infoCards}>
             <div className={styles.buttons}>
@@ -72,4 +72,17 @@ export default function Home() {
       </Layout>
     </weatherProvider.Provider>
   );
+}
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch('https://raw.githubusercontent.com/leandrogtabak/weather-app/main/public/city-list.json');
+  const locations = await res.json();
+
+  return {
+    props: {
+      locations,
+    },
+  };
 }

@@ -32,14 +32,14 @@ const SelectBox = ({ locations }) => {
             return (
               <button key={location.id} onClick={() => getLocationInfo(location.id, location)} className={styles.citySelected}>{`${location.name}, ${
                 location.country
-              }${location.state && ', ' + location.state}`}</button>
+              }${location.state ? location.state && ', ' + location.state : ''}`}</button>
             );
           })
         ) : (
           <div className={styles.containerSelected}>
             <button onClick={() => getLocationInfo(locationSelected.id, locationSelected)} className={styles.citySelected}>{`${locationSelected.name}, ${
               locationSelected.country
-            }${locationSelected.state && ', ' + locationSelected.state}`}</button>
+            }${locationSelected.state ? locationSelected.state && ', ' + locationSelected.state : ''}`}</button>
             <ChevronRight className={styles.arrow} />
           </div>
         )
