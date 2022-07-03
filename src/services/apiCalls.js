@@ -9,7 +9,7 @@ export async function callFetchCity(key) {
     .trim()
     .split(/\s+/);
 
-  const dato = await fetch('city.list.json')
+  const dato = await fetch('https://raw.githubusercontent.com/leandrogtabak/weather-app/a288510e868506b5717185a24fb099676c52f7e6/public/city.list.json')
     .then((response) => response.json())
     .then((data) =>
       data.filter((item) => {
