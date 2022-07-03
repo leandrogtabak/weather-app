@@ -24,7 +24,7 @@ export async function callFetchCity(key) {
     .trim()
     .split(/\s+/);
 
-  const dato = await fetch('https://github.com/leandrogtabak/weather-app/blob/dcfec0720da4803a638388b7149888f926b06e91/public/city-list.json')
+  const dato = await fetch('city-list.json')
     .then((response) => response.json())
     .then((data) =>
       data.filter((item) => {
