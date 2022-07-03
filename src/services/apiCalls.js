@@ -1,3 +1,18 @@
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
+//   const res = await fetch('https://raw.githubusercontent.com/leandrogtabak/weather-app/a288510e868506b5717185a24fb099676c52f7e6/public/city.list.json')
+//   const cities = await res.json()
+
+//   // By returning { props: { posts } }, the Blog component
+//   // will receive `posts` as a prop at build time
+//   return {
+//     props: {
+//       cities,
+//     },
+//   }
+// }
+
 //Function to filter by key a json that contains all cities with their codes
 
 export async function callFetchCity(key) {

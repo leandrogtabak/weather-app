@@ -23,6 +23,7 @@ const LateralMenu = () => {
   const [locationToSearch, setLocationToSearch] = useState('');
   const [locationsFound, setLocationsFound] = useState([]);
   const [date, setDate] = useState('');
+  const [showLoader, setShowLoader] = useState(false);
 
   const { tempUnit, currentWeather, setCurrentWeather, setFiveDaysForecast } = useContext(weatherProvider);
 
@@ -48,11 +49,17 @@ const LateralMenu = () => {
   };
 
   const onClickSearch = async () => {
+    setShowLoader(true);
     setLocationsFound(await callFetchCity(locationToSearch));
+    setShowLoader(false);
   };
   const onKeyPress = async (e) => {
     // e.preventDefault();
-    if (e.key === 'Enter') setLocationsFound(await callFetchCity(locationToSearch));
+    if (e.key === 'Enter') {
+      setShowLoader(true);
+      setLocationsFound(await callFetchCity(locationToSearch));
+      setShowLoader(false);
+    }
   };
 
   const onLocateClick = async () => {
@@ -119,6 +126,7 @@ const LateralMenu = () => {
             <ButtonSearch onClickSearch={onClickSearch} />
           </div>
           <SelectBox locations={locationsFound} />
+          {showLoader && <LoadingSpinner />}
         </div>
       </div>
     </div>
