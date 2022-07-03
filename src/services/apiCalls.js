@@ -9,7 +9,7 @@ export async function callFetchCity(key) {
     .trim()
     .split(/\s+/);
 
-  const dato = await fetch('http://localhost:3000/city.list.json')
+  const dato = await fetch('city.list.json')
     .then((response) => response.json())
     .then((data) =>
       data.filter((item) => {
