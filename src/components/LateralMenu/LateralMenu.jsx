@@ -72,6 +72,7 @@ const LateralMenu = () => {
     setDate(`${date[0]}, ${date[2]} ${date[1]}`);
   };
 
+  // const actualTemp = (((currentWeather && currentWeather.main.temp - 273.15) * 10) / 10).toFixed(1);
   const actualTemp = (((currentWeather && currentWeather.main.temp - 273.15) * 10) / 10).toFixed(1);
 
   return (

@@ -36,14 +36,12 @@ export async function callFetchCity(key) {
 
 //envolver en try catch
 export async function callFetchWeatherById(id) {
-  const info = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=9efd0b9d627b8a59c6968a752ba878a4`).then((response) =>
-    response.json()
-  );
+  const info = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=${process.env.apiKey}`).then((response) => response.json());
   return info;
 }
 //envolver en try catch
 export async function callFetchWeatherByLatLon(lat, lon) {
-  const info = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=9efd0b9d627b8a59c6968a752ba878a4`).then((response) =>
+  const info = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.apiKey}`).then((response) =>
     response.json()
   );
   return info;
@@ -53,15 +51,13 @@ export async function callFetchWeatherByLatLon(lat, lon) {
 
 //envolver en try catch
 export async function callFetchCurrentWeatherById(id) {
-  const info = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=9efd0b9d627b8a59c6968a752ba878a4`).then((response) =>
-    response.json()
-  );
+  const info = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${process.env.apiKey}`).then((response) => response.json());
   return info;
 }
 
 //envolver en try catch
 export async function callFetchCurrentWeatherByLatLon(lat, lon) {
-  const info = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9efd0b9d627b8a59c6968a752ba878a4`).then((response) =>
+  const info = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.apiKey}`).then((response) =>
     response.json()
   );
   return info;
