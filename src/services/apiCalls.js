@@ -41,7 +41,7 @@ export async function callFetchCity(key) {
       })
     )
     .then((data) => {
-      return [...new Map(data.map((item) => [item.name, item])).values()].slice(0, 8);
+      return data.slice(0, 8);
     });
 
   return dato;
