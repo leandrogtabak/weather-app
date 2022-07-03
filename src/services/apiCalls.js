@@ -23,8 +23,8 @@ export async function callFetchCity(key) {
     .replace(/\p{Diacritic}/gu, '')
     .trim()
     .split(/\s+/);
-
-  const dato = await fetch('https://raw.githubusercontent.com/leandrogtabak/weather-app/a288510e868506b5717185a24fb099676c52f7e6/public/city-list.json')
+    https://github.com/leandrogtabak/weather-app/blob/dcfec0720da4803a638388b7149888f926b06e91/public/city-list.json
+  const dato = await fetch('https://github.com/leandrogtabak/weather-app/blob/dcfec0720da4803a638388b7149888f926b06e91/public/city-list.json')
     .then((response) => response.json())
     .then((data) =>
       data.filter((item) => {
