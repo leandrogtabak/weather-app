@@ -21,6 +21,7 @@ const SelectBox = ({ locations }) => {
     setFiveDaysForecast(weatherWeek);
     setShowList(false);
     setLocationSelected(location);
+    console.log(id);
   };
 
   return (
