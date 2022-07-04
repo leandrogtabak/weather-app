@@ -189,6 +189,23 @@
     cursor: pointer;
 }
 
+.seeWeather {
+    background-color: transparent;
+    margin-left: auto;
+    border: none;
+
+    margin-right: 12px;
+    margin-top: 19px;
+
+    color: var(--text-color-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.seeWeather:hover {
+    color: white;
+}
+
 @media (max-width: 600px) {
 
 

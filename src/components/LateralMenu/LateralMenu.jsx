@@ -8,7 +8,6 @@ import ButtonSearch from '../ButtonSearch/ButtonSearch';
 import SelectBox from '../SelectBox/SelectBox';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
-import { Close } from '@material-ui/icons';
 import { locateCurrentPosition, callFetchCurrentWeatherByLatLon, callFetchWeatherByLatLon, celciusToFarerenheit } from '../../services/apiCalls.js';
 import { weatherProvider } from '../../Helper/Context.js';
 
@@ -56,7 +55,7 @@ const LateralMenu = ({ locations }) => {
     }
   };
 
-  //////////////////////////////////////
+  //////////////////////////////////////Search cities ////////////////////////////////
 
   async function callFetchCity(key) {
     //genero una lista de cada key que ingresa el usuario en la caja de busqueda
@@ -80,7 +79,7 @@ const LateralMenu = ({ locations }) => {
       return test;
     });
   }
-  ///////////////////////
+  //////////////////////////////////////////////////////////////////////////////
 
   const onLocateClick = async () => {
     const position = await locateCurrentPosition();
@@ -137,8 +136,10 @@ const LateralMenu = ({ locations }) => {
       </div>
 
       <div className={`${styles.container} ${!toggleMenus && styles.containerHide}`}>
-        {/* <Close className={styles.close} onClick={() => setShowWeather((prevState) => !prevState)} /> */}
-        <Close className={styles.close} onClick={() => setToggleMenus((prevState) => !prevState)} />
+        {/* <Close className={styles.close} onClick={() => setToggleMenus((prevState) => !prevState)} /> */}
+        <button className={styles.seeWeather} onClick={() => setToggleMenus((prevState) => !prevState)}>
+          See current weather
+        </button>
 
         <div className={styles.selectLocationContainer}>
           <div className={styles.searchBar}>
