@@ -12,7 +12,7 @@
 
     overflow-y: auto;
     height: 100%;
-    max-height: 450px;
+    max-height: 600px;
 
 
 
@@ -60,6 +60,6 @@
 @media (max-width: 600px) {
 
     .container {
-        max-height: 600px
+        max-height: 400px
     }
 }
