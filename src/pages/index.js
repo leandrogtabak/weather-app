@@ -3,6 +3,8 @@ import DayList from '../components/DayList/DayList';
 import HighlightsList from '../components/HighlightsList/HighlightsList';
 import LateralMenu from '../components/LateralMenu/LateralMenu';
 import Button from '../components/Button/Button';
+import axios from 'axios';
+import { asyncGunzip } from 'async-gzip-gunzip';
 
 import styles from '../styles/Home.module.css';
 
@@ -77,8 +79,16 @@ export default function Home({ locations }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch('https://raw.githubusercontent.com/leandrogtabak/weather-app/main/public/city-list.json');
-  const locations = await res.json();
+  // const res = await fetch('https://raw.githubusercontent.com/leandrogtabak/weather-app/main/public/city-list.json');
+  // const locations = await res.json();
+
+  console.time('answer time');
+  let url = 'http://bulk.openweathermap.org/sample/city.list.json.gz';
+
+  const { data } = await axios.get(url, { responseType: 'arraybuffer' });
+  const gunzipped = await asyncGunzip(data);
+  const locations = await JSON.parse(gunzipped.toString());
+  console.timeLog('answer time');
 
   return {
     props: {
