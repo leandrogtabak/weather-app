@@ -98,7 +98,6 @@ const LateralMenu = ({ locations }) => {
     setDate(`${date[0]}, ${date[2]} ${date[1]}`);
   };
 
-  // const actualTemp = (((currentWeather && currentWeather.main.temp - 273.15) * 10) / 10).toFixed(1);
   const actualTemp = (((currentWeather && currentWeather.main.temp - 273.15) * 10) / 10).toFixed(1);
 
   return (
@@ -136,17 +135,16 @@ const LateralMenu = ({ locations }) => {
       </div>
 
       <div className={`${styles.container} ${!toggleMenus && styles.containerHide}`}>
-        {/* <Close className={styles.close} onClick={() => setToggleMenus((prevState) => !prevState)} /> */}
-        <button className={styles.seeWeather} onClick={() => setToggleMenus((prevState) => !prevState)}>
+        {/* <button className={styles.seeWeather} onClick={() => setToggleMenus((prevState) => !prevState)}>
           See current weather
-        </button>
+        </button> */}
 
         <div className={styles.selectLocationContainer}>
           <div className={styles.searchBar}>
             <SearchBox onInputSearch={onInputSearch} onKeyPress={onKeyPress} />
             <ButtonSearch onClickSearch={onClickSearch} />
           </div>
-          <SelectBox locations={locationsFound} />
+          <SelectBox locations={locationsFound} menuToggle={setToggleMenus} />
           {showLoader && <LoadingSpinner />}
         </div>
       </div>

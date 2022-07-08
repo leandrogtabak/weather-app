@@ -5,7 +5,7 @@ import { weatherProvider } from '../../Helper/Context.js';
 
 import { useContext, useState, useEffect } from 'react';
 
-const SelectBox = ({ locations }) => {
+const SelectBox = ({ locations, menuToggle }) => {
   const { setCurrentWeather, setFiveDaysForecast } = useContext(weatherProvider);
   const [showList, setShowList] = useState(true);
   const [locationSelected, setLocationSelected] = useState('');
@@ -21,7 +21,7 @@ const SelectBox = ({ locations }) => {
     setFiveDaysForecast(weatherWeek);
     setShowList(false);
     setLocationSelected(location);
-    console.log(id);
+    menuToggle(false);
   };
 
   return (
