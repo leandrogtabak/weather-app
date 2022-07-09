@@ -1,4 +1,4 @@
-<h1 align="center">Weather App</h1>
+<h1 align="center">Windbnb</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -6,15 +6,15 @@
 
 <div align="center">
   <h3>
-    <a href="https://weather-app-leandrogtabak.vercel.app/">
+    <a href="https://windbnb-git-main-leandrogtabak.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/leandrogtabak/weather-app">
+    <a href="https://github.com/leandrogtabak/windbnb">
       Solution
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
+    <a href="https://devchallenges.io/challenges/3JFYedSOZqAxYuOCNmYD">
       Challenge
     </a>
   </h3>
@@ -34,7 +34,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/leandrogtabak/weather-app/blob/main/demo.jpeg)
+![screenshot](https://github.com/leandrogtabak/windbnb/blob/main/demo.jpeg)
 
 ### Built With
 
